@@ -8,10 +8,10 @@
   position: absolute;
   height: 150px;
   width: 150px;
-  border-radius: 50%;
+  border-radius: 40% 60%; /* Changed to create an elliptical shape */
   background-color: #fff;
-  margin-top: -20px;
-  margin-left: 220px;
+  margin-top: -200px;
+  margin-left: 270px;
   z-index: 0;
   opacity: 0;
 }
@@ -27,13 +27,13 @@
 }
 
 @-webkit-keyframes steam1 {
-  0% {transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2;}
-  100% {transform: translateY(-200px) translateX(-20px) scale(1); opacity: 0;}
+  0% {transform: translateY(0) translateX(0) scale(0.25) rotate(0deg); opacity: 0.2;}
+  100% {transform: translateY(-200px) translateX(-20px) scale(1) rotate(45deg); opacity: 0;}
 }
 
 @keyframes steam1 {
-  0% {transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2;}
-  100% {transform: translateY(-200px) translateX(-20px) scale(1); opacity: 0;}
+  0% {transform: translateY(0) translateX(0) scale(0.25) rotate(0deg); opacity: 0.2;}
+  100% {transform: translateY(-200px) translateX(-20px) scale(1) rotate(45deg); opacity: 0;}
 }
 
 #steam2 {
@@ -47,40 +47,913 @@
 }
 
 @-webkit-keyframes steam2 {
-  0% {transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2;}
-  100% {transform: translateY(-200px) translateX(20px) scale(1); opacity: 0;}
+  0% {transform: translateY(0) translateX(0) scale(0.25) rotate(0deg); opacity: 0.2;}
+  100% {transform: translateY(-200px) translateX(20px) scale(1) rotate(-30deg); opacity: 0;}
 }
 
 @keyframes steam2 {
-  0% {transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2;}
-  100% {transform: translateY(-200px) translateX(20px) scale(1); opacity: 0;}
+  0% {transform: translateY(0) translateX(0) scale(0.25) rotate(0deg); opacity: 0.2;}
+  100% {transform: translateY(-200px) translateX(20px) scale(1) rotate(-30deg); opacity: 0;}
 }
 
 /* Coffee Pour Animation*/
-.section-3__card {
+
+/* Cappuccino*/
+#Cappuccino .coffee1_cup {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.5s, max-height 0.5s; /* add a transition effect */
+}
+
+#Cappuccino:hover .coffee1_wave:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+#Cappuccino:hover .coffee1_wave:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+#Cappuccino:hover .coffee1_cup {
+  max-height: 100vh; /* or any other value that fits your needs */
+  opacity: 1;
+}
+.coffee1_cup {
   position: relative;
+  margin-top: 20px;
+  border: 5px solid white;
+  border-color: white;
+  width: 200px;
+  height: 250px;
+  
+  border-radius: 35px;
+  border-top: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: inset 0 0 0 5px #ffffff;
   overflow: hidden;
 }
 
-#water {
-  background-image: url("https://priteshgupta.com/demos/fill/waves.png");
-  background-position: top right;
-  width: 80vw;
-  height: 0; /* set height to 0 initially */
-  border-radius: 100%;
-}
-
-#water::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.coffee1_wave {
+  position: relative;
   width: 100%;
-  height: 0; /* set height to 0 initially */
-  background-color: #b3620d; /* set background color to white */
-  transition: height 3s ease-out;
+  height: 100%;
+  background: #be9b7b; 
+  box-shadow: inset 0 0 0 5px #000000;
+  border-radius: 30px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  overflow: hidden;
 }
 
-.section-3__card:hover #water::before {
-  height: 100%; /* animate height to 100% on hover */
+.coffee1_wave:before,
+.coffee1_wave:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: black;
+}
+
+.coffee1_wave:before {
+  border-radius: 45%;
+}
+
+.coffee1_wave:after {
+  border-radius: 40%;
+}
+
+.coffee1_wave:hover:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+.coffee1_wave:hover:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@keyframes rise {
+  0% {
+    top: 200px;
+  }
+  
+  100% {
+    top: -50px;
+  }
+}
+
+/* Americano*/
+#Americano .coffee2_cup {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.5s, max-height 0.5s; /* add a transition effect */
+}
+
+#Americano:hover .coffee2_wave:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+#Americano:hover .coffee2_wave:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+#Americano:hover .coffee2_cup {
+  max-height: 100vh; /* or any other value that fits your needs */
+  opacity: 1;
+}
+.coffee2_cup {
+  position: relative;
+  margin-top: 20px;
+  border: 5px solid white;
+  border-color: white;
+  width: 200px;
+  height: 250px;
+  
+  border-radius: 35px;
+  border-top: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: inset 0 0 0 5px #ffffff;
+  overflow: hidden;
+}
+
+.coffee2_wave {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #6d5b4f; 
+  box-shadow: inset 0 0 0 5px #000000;
+  border-radius: 30px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  overflow: hidden;
+}
+
+.coffee2_wave:before,
+.coffee2_wave:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: black;
+}
+
+.coffee2_wave:before {
+  border-radius: 45%;
+}
+
+.coffee2_wave:after {
+  border-radius: 40%;
+}
+
+.coffee2_wave:hover:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+.coffee2_wave:hover:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@keyframes rise {
+  0% {
+    top: 200px;
+  }
+  
+  100% {
+    top: -50px;
+  }
+}
+
+/* Espresso*/
+#Espresso .coffee3_cup {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.5s, max-height 0.5s; /* add a transition effect */
+}
+
+#Espresso:hover .coffee3_wave:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+#Espresso:hover .coffee3_wave:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+#Espresso:hover .coffee3_cup {
+  max-height: 100vh; /* or any other value that fits your needs */
+  opacity: 1;
+}
+.coffee3_cup {
+  position: relative;
+  margin-top: 20px;
+  border: 5px solid white;
+  border-color: white;
+  width: 200px;
+  height: 250px;
+  
+  border-radius: 35px;
+  border-top: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: inset 0 0 0 5px #ffffff;
+  overflow: hidden;
+}
+
+.coffee3_wave {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #3C2218; 
+  box-shadow: inset 0 0 0 5px #000000;
+  border-radius: 30px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  overflow: hidden;
+}
+
+.coffee3_wave:before,
+.coffee3_wave:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: black;
+}
+
+.coffee3_wave:before {
+  border-radius: 45%;
+}
+
+.coffee3_wave:after {
+  border-radius: 40%;
+}
+
+.coffee3_wave:hover:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+.coffee3_wave:hover:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@keyframes rise {
+  0% {
+    top: 200px;
+  }
+  
+  100% {
+    top: -50px;
+  }
+}
+
+/* Macchiato*/
+#Macchiato .coffee4_cup {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.5s, max-height 0.5s; /* add a transition effect */
+}
+
+#Macchiato:hover .coffee4_wave:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+#Macchiato:hover .coffee4_wave:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+#Macchiato:hover .coffee4_cup {
+  max-height: 100vh; /* or any other value that fits your needs */
+  opacity: 1;
+}
+.coffee4_cup {
+  position: relative;
+  margin-top: 20px;
+  border: 5px solid white;
+  border-color: white;
+  width: 200px;
+  height: 250px;
+  
+  border-radius: 35px;
+  border-top: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: inset 0 0 0 5px #ffffff;
+  overflow: hidden;
+}
+
+.coffee4_wave {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #ad6730; 
+  box-shadow: inset 0 0 0 5px #000000;
+  border-radius: 30px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  overflow: hidden;
+}
+
+.coffee4_wave:before,
+.coffee4_wave:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: black;
+}
+
+.coffee4_wave:before {
+  border-radius: 45%;
+}
+
+.coffee4_wave:after {
+  border-radius: 40%;
+}
+
+.coffee4_wave:hover:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+.coffee4_wave:hover:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@keyframes rise {
+  0% {
+    top: 200px;
+  }
+  
+  100% {
+    top: -50px;
+  }
+}
+
+/* Mocha*/
+#Mocha .coffee5_cup {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.5s, max-height 0.5s; /* add a transition effect */
+}
+
+#Mocha:hover .coffee5_wave:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+#Mocha:hover .coffee5_wave:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+#Mocha:hover .coffee5_cup {
+  max-height: 100vh; /* or any other value that fits your needs */
+  opacity: 1;
+}
+.coffee5_cup {
+  position: relative;
+  margin-top: 20px;
+  border: 5px solid white;
+  border-color: white;
+  width: 200px;
+  height: 250px;
+  
+  border-radius: 35px;
+  border-top: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: inset 0 0 0 5px #ffffff;
+  overflow: hidden;
+}
+
+.coffee5_wave {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #bf9270; 
+  box-shadow: inset 0 0 0 5px #000000;
+  border-radius: 30px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  overflow: hidden;
+}
+
+.coffee5_wave:before,
+.coffee5_wave:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: black;
+}
+
+.coffee5_wave:before {
+  border-radius: 45%;
+}
+
+.coffee5_wave:after {
+  border-radius: 40%;
+}
+
+.coffee5_wave:hover:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+.coffee5_wave:hover:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@keyframes rise {
+  0% {
+    top: 200px;
+  }
+  
+  100% {
+    top: -50px;
+  }
+}
+
+/* Latte*/
+#Latte .coffee6_cup {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.5s, max-height 0.5s; /* add a transition effect */
+}
+
+#Latte:hover .coffee6_wave:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+#Latte:hover .coffee6_wave:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+#Latte:hover .coffee6_cup {
+  max-height: 100vh; /* or any other value that fits your needs */
+  opacity: 1;
+}
+.coffee6_cup {
+  position: relative;
+  margin-top: 20px;
+  border: 5px solid white;
+  border-color: white;
+  width: 200px;
+  height: 250px;
+  
+  border-radius: 35px;
+  border-top: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: inset 0 0 0 5px #ffffff;
+  overflow: hidden;
+}
+
+.coffee6_wave {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #b6a897; 
+  box-shadow: inset 0 0 0 5px #000000;
+  border-radius: 30px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  overflow: hidden;
+}
+
+.coffee6_wave:before,
+.coffee6_wave:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: black;
+}
+
+.coffee6_wave:before {
+  border-radius: 45%;
+}
+
+.coffee6_wave:after {
+  border-radius: 40%;
+}
+
+.coffee6_wave:hover:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+.coffee6_wave:hover:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@keyframes rise {
+  0% {
+    top: 200px;
+  }
+  
+  100% {
+    top: -50px;
+  }
+}
+
+/* Piccolo*/
+#Piccolo .coffee7_cup {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.5s, max-height 0.5s; /* add a transition effect */
+}
+
+#Piccolo:hover .coffee7_wave:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+#Piccolo:hover .coffee7_wave:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+#Piccolo:hover .coffee7_cup {
+  max-height: 100vh; /* or any other value that fits your needs */
+  opacity: 1;
+}
+.coffee7_cup {
+  position: relative;
+  margin-top: 20px;
+  border: 5px solid white;
+  border-color: white;
+  width: 200px;
+  height: 250px;
+  
+  border-radius: 35px;
+  border-top: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: inset 0 0 0 5px #ffffff;
+  overflow: hidden;
+}
+
+.coffee7_wave {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #ECB176; 
+  box-shadow: inset 0 0 0 5px #000000;
+  border-radius: 30px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  overflow: hidden;
+}
+
+.coffee7_wave:before,
+.coffee7_wave:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: black;
+}
+
+.coffee7_wave:before {
+  border-radius: 45%;
+}
+
+.coffee7_wave:after {
+  border-radius: 40%;
+}
+
+.coffee7_wave:hover:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+.coffee7_wave:hover:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@keyframes rise {
+  0% {
+    top: 200px;
+  }
+  
+  100% {
+    top: -50px;
+  }
+}
+
+/* Ristretto*/
+#Ristretto .coffee8_cup {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.5s, max-height 0.5s; /* add a transition effect */
+}
+
+#Ristretto:hover .coffee8_wave:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+#Ristretto:hover .coffee8_wave:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+#Ristretto:hover .coffee8_cup {
+  max-height: 100vh; /* or any other value that fits your needs */
+  opacity: 1;
+}
+.coffee8_cup {
+  position: relative;
+  margin-top: 20px;
+  border: 5px solid white;
+  border-color: white;
+  width: 200px;
+  height: 250px;
+  
+  border-radius: 35px;
+  border-top: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: inset 0 0 0 5px #ffffff;
+  overflow: hidden;
+}
+
+.coffee8_wave {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #932C0D; 
+  box-shadow: inset 0 0 0 5px #000000;
+  border-radius: 30px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  overflow: hidden;
+}
+
+.coffee8_wave:before,
+.coffee8_wave:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: black;
+}
+
+.coffee8_wave:before {
+  border-radius: 45%;
+}
+
+.coffee8_wave:after {
+  border-radius: 40%;
+}
+
+.coffee8_wave:hover:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+.coffee8_wave:hover:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@keyframes rise {
+  0% {
+    top: 200px;
+  }
+  
+  100% {
+    top: -50px;
+  }
+}
+
+/* Affogato*/
+#Affogato .coffee9_cup {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.5s, max-height 0.5s; /* add a transition effect */
+}
+
+#Affogato:hover .coffee9_wave:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+#Affogato:hover .coffee9_wave:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+#Affogato:hover .coffee9_cup {
+  max-height: 100vh; /* or any other value that fits your needs */
+  opacity: 1;
+}
+.coffee9_cup {
+  position: relative;
+  margin-top: 20px;
+  border: 5px solid white;
+  border-color: white;
+  width: 200px;
+  height: 250px;
+  
+  border-radius: 35px;
+  border-top: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: inset 0 0 0 5px #ffffff;
+  overflow: hidden;
+}
+
+.coffee9_wave {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #836C5C; 
+  box-shadow: inset 0 0 0 5px #000000;
+  border-radius: 30px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  overflow: hidden;
+}
+
+.coffee9_wave:before,
+.coffee9_wave:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: black;
+}
+
+.coffee9_wave:before {
+  border-radius: 45%;
+}
+
+.coffee9_wave:after {
+  border-radius: 40%;
+}
+
+.coffee9_wave:hover:before {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgb(255, 255, 255);
+}
+
+.coffee9_wave:hover:after {
+  animation: animate 2.5s linear infinite, rise 2.5s linear infinite alternate;
+  background: rgba(0,0,0,.5);
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@keyframes rise {
+  0% {
+    top: 200px;
+  }
+  
+  100% {
+    top: -50px;
+  }
 }
